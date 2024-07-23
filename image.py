@@ -4,7 +4,7 @@ import dotenv
 import os
 
 # Tesseractのインストールパスを指定
-pytesseract.pytesseract.tesseract_cmd = os.getenv("TESSERACT_PATH")
+pytesseract.pytesseract.tesseract_cmd = "C:/Program Files/Tesseract-OCR/tesseract.exe"
 
 def transcription(path: str):
 
