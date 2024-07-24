@@ -1,14 +1,17 @@
-import image
 import pyautogui as pg
+import numpy as np
+import image
 import keyboard
+import cv2
 from time import sleep
 
 def typing():
+    location = image.find_image_on_screen("img/menu.png")
+    x, y, scale = location[0], location[1], location[4]
+    print(x, y)
     for i in range(360):
-        location = pg.locateOnScreen("img/shoyu.png", confidence=0.8)
-        center_x, center_y = location[0], location[1] + location[3] / 2
         path = "img/text.png"
-        pg.screenshot(path, region = (center_x + 30, center_y - 123, 345, 30))
+        pg.screenshot(path, region = ((x + 77 * scale), y - 155 * scale, 345 * scale, 30 * scale))
         text = image.transcription(path)
         pg.typewrite(text)
         print(f"{text}", end="")

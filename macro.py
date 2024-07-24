@@ -9,7 +9,6 @@ webbrowser.open(url, new=2, autoraise=True)
 sleep(2)
 pg.click("img/play.png")
 
-
 sleep(4)
 location_start = pg.locateOnScreen("img/start.png", confidence=0.7)
 pg.moveTo(location_start)
