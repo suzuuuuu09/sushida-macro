@@ -26,5 +26,3 @@ pag.press("space")
 sleep(0.5)
 
 auto_type.typing()
-
-# pag.screenshot("img/course.png", region=(780, 480, 470, 75))
