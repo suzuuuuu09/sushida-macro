@@ -1,5 +1,6 @@
 import image
 import pyautogui
+import keyboard
 from time import sleep
 
 def typing():
@@ -9,3 +10,5 @@ def typing():
         text = image.transcription(path)
         pyautogui.typewrite(text)
         sleep(0.1)
+        if keyboard.is_pressed("enter"):
+            break

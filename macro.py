@@ -25,4 +25,5 @@ sleep(0.5)
 pag.press("space")
 sleep(0.5)
 
+print("Press Enter to stop.")
 auto_type.typing()
