@@ -1,4 +1,4 @@
-import pyautogui
+import pyautogui as pag
 import webbrowser
 import auto_type
 from time import sleep
@@ -7,19 +7,24 @@ url = 'https://sushida.net'
 webbrowser.open(url, new=2, autoraise=True)
 
 sleep(2)
-pyautogui.moveTo(1150, 530)
-sleep(0.5)
-pyautogui.click()
+pag.click("img/play.png")
+
 sleep(4)
-pyautogui.moveTo(1000, 450)
+location_start = pag.locateOnScreen("img/start.png", confidence=0.7)
+pag.moveTo(location_start)
+sleep(0.05)
+pag.click()
+
 sleep(0.5)
-pyautogui.click()
+location_course = pag.locateOnScreen("img/course.png", confidence=0.9)
+pag.moveTo(location_course)
+sleep(0.05)
+pag.click()
+
 sleep(0.5)
-pyautogui.moveTo(1000, 520)
-sleep(0.5)
-pyautogui.click()
-sleep(0.5)
-pyautogui.press("space")
+pag.press("space")
 sleep(0.5)
 
 auto_type.typing()
+
+# pag.screenshot("img/course.png", region=(780, 480, 470, 75))
