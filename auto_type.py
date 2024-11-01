@@ -1,8 +1,6 @@
 import pyautogui as pg
-import numpy as np
 import image
 import keyboard
-import cv2
 from time import sleep
 
 def typing(mode: str):
@@ -11,13 +9,13 @@ def typing(mode: str):
     for i in range(360):
         path = "img/text.png"
         r, w = 0, 0
-        if mode == "e":
+        if mode == "easy":
             r, w = x + 179 * scale, 150 * scale
-        elif mode == "n":
+        elif mode == "normal":
             r, w = x + 128 * scale, 250 * scale
-        elif mode == "h":
+        elif mode == "hard":
             r, w = x + 77 * scale, 345 * scale
-        pg.screenshot(path, region = (r, y - 155 * scale, w, 30 * scale))
+        pg.screenshot(path, region = (int(r), int(y - 155 * scale), int(w), int(30 * scale)))
         text = image.transcription(path)
         pg.typewrite(text)
         print(f"{text}", end="")
