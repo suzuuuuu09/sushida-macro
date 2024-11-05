@@ -4,9 +4,14 @@ import auto_type
 import sys
 from time import sleep
 from choice_selector import ChoiceSelector
+from terminal import Terminal
 
 options = ["easy", "normal", "hard"]
+
+terminal = Terminal()
 selector = ChoiceSelector(options, 1)
+
+terminal.clear_screen()
 select = selector.run()
 
 url = 'https://sushida.net'

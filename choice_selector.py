@@ -7,7 +7,6 @@ class ChoiceSelector:
         self.menu_start_row = menu_start_row
 
     def display_menu(self):
-        print("\033[2J")  # Clear the screen
         for i, option in enumerate(self.menu_options):
             if i == self.menu_selected_index:
                 print(f"\033[{self.menu_start_row};{i*10 + 5}H\033[33m> {option}\033[0m", end='', flush=True)
